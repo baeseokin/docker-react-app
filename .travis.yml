@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install: 
-  - echo "start creating an image"
+  - echo "start creating an image ....."
   - docker build -t sibae/docker-react-app -f Dockerfile.dev .
 
 script:

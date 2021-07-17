@@ -1,0 +1,14 @@
+sudo: required
+language: generic
+services:
+  - docker
+
+before_install: 
+  - echo "start creating an image"
+  - docker build -t sibae/docker-react-app -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=ture sibae/docker-react-app npm run test -- --coverage
+
+ after_success:
+  - echo "Test success"     
